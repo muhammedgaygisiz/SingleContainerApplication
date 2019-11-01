@@ -1,3 +1,10 @@
+# Project to demonstrate Production-Grade Project
+
+This project contains a Dockerfile.dev for dev purposes
+and a Dockerfile for a production ready container.
+It contains a react app. In production it uses nginx as
+Web Server.
+
 # Run react-app in dev mode  
 
 ## Build your docker image
