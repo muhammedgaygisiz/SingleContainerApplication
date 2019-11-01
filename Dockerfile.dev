@@ -5,6 +5,11 @@ WORKDIR '/app'
 COPY package.json .
 RUN npm install
 
+# Not realy necessary here, since docker-compose mounts
+# the working directory to the container
+# but we leave it here as a reminder for
+# e.g. production Dockerfile, or switching to
+# something else but docker-compose
 COPY . .
 
 CMD ["npm", "run", "start"]
