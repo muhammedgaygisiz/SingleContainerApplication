@@ -17,6 +17,9 @@ RUN npm run build
 
 FROM nginx
 
+# Necessary for AWS ElasticBeanStalk
+EXPOSE 80
+
 COPY --from=builder /app/build /usr/share/nginx/html
 
 # Start nginx is handles by base image so no default
