@@ -7,13 +7,8 @@ Web Server.
 
 # Run react-app in dev mode  
 
-## Build your docker image
-docker build -f Dockerfile.dev . -t mgaygisiz/frontend
+## For convenience start the project with docker-compose
+docker-compose up --build
 
-## Run container including port exposion and volume mappging
-./run.dev.sh
-
-docker run ... in shell script will expose port 3000 and mount 
-working directory into container but the folder node_modules
-
-since src is mounted hot deployment works.
+## Otherwise build docker file
+docker run -p 3000:3000 -v /app/node_modules -v "$(pwd)":/app mgaygisiz/frontend
