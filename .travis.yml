@@ -3,18 +3,18 @@ services:
   - docker
 
 before_install:
-  - docker build -t mgaygisiz/SingleContainerApplication -f Dockerfile.dev .
+  - docker build -t mgaygisiz/single-container-application -f Dockerfile.dev .
 
 script:
-  - docker run -e CI=true mgaygisiz/SingleContainerApplication npm run test
+  - docker run -e CI=true mgaygisiz/single-container-application npm run test
 
 #deploy:
 #  provider: elasticbeanstalk
 #  region: "us-east-2"
-#  app: "SingleContainerApplication"
+#  app: "single-container-application"
 #  env: "Frontend-env" #todo think to rename this next time
 #  bucket_name: "elasticbeanstalk-us-east-2-178022083866"
-#  bucket_path: "SingleContainerApplication"
+#  bucket_path: "single-container-application"
 #  on:
 #    branch: master
 #  access_key_id:
