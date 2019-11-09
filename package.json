@@ -1,5 +1,5 @@
 {
-  "name": "singleContainerApplication",
+  "name": "single-container-application",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
