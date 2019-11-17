@@ -8,6 +8,14 @@ before_install:
 script:
   - docker run -e CI=true mgaygisiz/frontend npm run test
 
+after_success:
+# Build Prod Containers
+  - docker build -t mgaygisiz/frontend .
+# Log in to the docker CLI
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+# Push built images to Docker Hub
+  - docker push mgaygisiz/frontend
+
 #deploy:
 #  provider: elasticbeanstalk
 #  region: "us-east-2"
